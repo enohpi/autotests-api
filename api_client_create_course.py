@@ -43,5 +43,5 @@ create_course_request = CreateCourseRequestSchema(
     created_by_user_id=create_user_response.user.id  # Используем атрибуты место ключей
 )
 print('Create course data:', create_course_request)
-# create_course_response = courses_client.create_course(create_course_request)
-# print('Create course data:', create_course_response)
+create_course_response = courses_client.create_course(create_course_request)
+print('Create course data:', create_course_response)
