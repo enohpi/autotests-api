@@ -7,7 +7,7 @@ from fixtures.courses import CourseFixture
 from fixtures.users import UserFixture
 
 
-class ExercisesFixture(BaseModel):
+class ExerciseFixture(BaseModel):
     request: CreateExerciseRequestSchema
     response: CreateExerciseResponseSchema
 
@@ -18,7 +18,7 @@ def exercises_client(function_user: UserFixture) -> ExercisesClient:
 
 
 @pytest.fixture
-def function_exercises(exercises_client: ExercisesClient, function_course: CourseFixture) -> ExercisesFixture:
+def function_exercise(exercises_client: ExercisesClient, function_course: CourseFixture) -> ExerciseFixture:
     request = CreateExerciseRequestSchema(course_id=function_course.response.course.id)
     response = exercises_client.create_exercise(request)
-    return ExercisesFixture(request=request, response=response)
+    return ExerciseFixture(request=request, response=response)
