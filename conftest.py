@@ -1,7 +1,8 @@
-pytest_plugins= (
+pytest_plugins = (
     "fixtures.authentication",
     "fixtures.users",
     "fixtures.files",
     "fixtures.courses",
-    "fixtures.exercises"
+    "fixtures.exercises",
+    "fixtures.allure"
 )
